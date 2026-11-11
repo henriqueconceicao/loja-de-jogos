@@ -1,0 +1,491 @@
+/* Checkpoint - estilos da loja */
+
+:root {
+    --bg: #16181d;
+    --card: #1f2229;
+    --card-2: #2a2e37;
+    --text: #ebe9e3;
+    --muted: #9a9ca5;
+    --accent: #f2b134;
+    --accent-text: #1a1305;
+    --border: #353944;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+button, input { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.shell {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+/* ---------- Topo ---------- */
+
+.topbar {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.nav-links a:hover { color: var(--text); }
+
+.nav-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.search {
+    width: 200px;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--card);
+    color: var(--text);
+    font-size: 14px;
+}
+
+.search::placeholder { color: var(--muted); }
+
+.cart-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--card);
+    color: var(--text);
+    font-size: 14px;
+}
+
+.cart-button:hover { background: var(--card-2); }
+
+.cart-count {
+    min-width: 22px;
+    padding: 1px 6px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+/* ---------- Destaque ---------- */
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 340px;
+    margin: 32px 0 56px;
+    padding: 48px 56px;
+    border-radius: 8px;
+    background: #231f2e;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+}
+
+.hero h1 {
+    margin: 0 0 14px;
+    font-size: clamp(30px, 4.4vw, 44px);
+    line-height: 1.15;
+}
+
+.hero p {
+    margin: 0;
+    max-width: 400px;
+    color: #c4c1cc;
+    line-height: 1.6;
+}
+
+.hero-cta {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.hero-cta:hover { background: #ffc653; }
+
+/* "capa" do jogo novo, fica só desenhada em CSS por enquanto */
+.hero-art {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-6deg);
+    width: 210px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 18px;
+    border-radius: 4px;
+    background: linear-gradient(160deg, #e8674f, #7a3f9e 55%, #1c1f45);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+}
+
+.hero-art-label {
+    font-size: 12px;
+    color: #f0d6ff;
+}
+
+.hero-art-title {
+    margin-top: 4px;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+
+/* ---------- Lista de jogos ---------- */
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.section-heading p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.section-heading a {
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.section-heading a:hover { text-decoration: underline; }
+
+.filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.filter {
+    flex: none;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.filter:hover { color: var(--text); border-color: var(--muted); }
+
+.filter.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-text);
+    font-weight: 600;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.game-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--card);
+}
+
+.game-card:hover { border-color: var(--muted); }
+
+.cover {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 190px;
+    padding: 14px;
+}
+
+/* escurece o rodapé da capa pro texto ficar legível */
+.cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8, 8, 14, .85), transparent 70%);
+}
+
+.cover-orbit  { background: #1b3350 url("imagens/echoes-of-orbit.svg") center 42% / cover no-repeat; }
+.cover-ember  { background: #4a2527 url("imagens/ashes-of-ember.svg") center 42% / cover no-repeat; }
+.cover-forest { background: #35583f url("imagens/wildwood.svg") center 42% / cover no-repeat; }
+.cover-neon   { background: #1b1d4d url("imagens/neon-pulse.svg") center 42% / cover no-repeat; }
+.cover-storm  { background: #27384e url("imagens/stormbreak.svg") center 42% / cover no-repeat; }
+.cover-drift  { background: #55808f url("imagens/drift-horizon.svg") center 42% / cover no-repeat; }
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.cover-name {
+    position: relative;
+    z-index: 1;
+}
+
+.cover-name small {
+    display: block;
+    margin-bottom: 4px;
+    color: #dcd8e4;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.cover-name strong {
+    display: block;
+    font-size: 22px;
+    line-height: 1.05;
+}
+
+.game-info { padding: 14px; }
+
+.genre {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.game-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.price strong { font-size: 17px; }
+
+.old-price {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: line-through;
+}
+
+.add-button {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--card-2);
+    color: var(--text);
+    font-size: 20px;
+    line-height: 1;
+}
+
+.add-button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-text);
+}
+
+.empty-state {
+    display: none;
+    padding: 36px 20px;
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    color: var(--muted);
+    text-align: center;
+}
+
+
+/* ---------- Vantagens ---------- */
+
+.perks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 60px 0;
+}
+
+.perk {
+    padding: 4px 0 4px 16px;
+    border-left: 3px solid var(--accent);
+}
+
+.perk strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.perk span {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* ---------- Rodapé e aviso ---------- */
+
+footer {
+    padding: 22px 0 28px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.toast {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+    padding: 12px 16px;
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+    background: #2b2f38;
+    color: var(--text);
+    font-size: 14px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s;
+}
+
+.toast.show { opacity: 1; }
+
+
+/* ---------- Telas menores ---------- */
+
+@media (max-width: 860px) {
+    .game-grid { grid-template-columns: repeat(3, 1fr); }
+    .hero { padding: 40px 32px; }
+    .hero-art { right: 5%; width: 170px; height: 230px; }
+    .search { width: 160px; }
+}
+
+@media (max-width: 640px) {
+    .shell { width: calc(100% - 28px); }
+    .nav-links { display: none; }
+    .search { width: 130px; }
+
+    .hero {
+        display: block;
+        min-height: 0;
+        margin: 20px 0 40px;
+        padding: 28px 22px 200px;
+    }
+
+    .hero h1 { font-size: 28px; }
+
+    .hero-art {
+        right: 22px;
+        top: auto;
+        bottom: 22px;
+        transform: rotate(-6deg);
+        width: 120px;
+        height: 150px;
+        padding: 12px;
+    }
+
+    .hero-art-title { font-size: 16px; }
+    .hero-art-label { font-size: 11px; }
+
+    .game-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .cover { height: 160px; padding: 10px; }
+    .cover-name strong { font-size: 18px; }
+    .game-info { padding: 10px; }
+    .price strong { font-size: 15px; }
+
+    .perks { grid-template-columns: 1fr; margin: 40px 0; }
+    .section-heading h2 { font-size: 22px; }
+    .section-heading p { display: none; }
+}
+
+@media (max-width: 380px) {
+    .search { width: 100px; }
+    .cart-button { padding: 0 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .toast { transition: none; }
+}

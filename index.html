@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101014">
+    <title>Checkpoint | Loja de jogos digitais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="shell nav">
+            <a class="brand" href="#">checkpoint</a>
+
+            <nav class="nav-links">
+                <a href="#jogos">Jogos</a>
+                <a href="#vantagens">Como funciona</a>
+                <a href="#ofertas">Promoções</a>
+            </nav>
+
+            <div class="nav-actions">
+                <label class="search-wrap">
+                    <input class="search" id="search" type="search" placeholder="Buscar jogo" aria-label="Buscar jogo">
+                </label>
+                <button class="cart-button" id="cartButton" type="button" aria-label="Abrir carrinho">
+                    Carrinho <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero" id="ofertas">
+            <div class="hero-content">
+                <h1 id="hero-title">Jogos com até 40% de desconto esta semana</h1>
+                <p>Aventura, RPG, corrida e indies. A chave chega no seu e-mail assim que o pagamento é aprovado.</p>
+                <a class="hero-cta" href="#jogos">Ver os jogos</a>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <span class="hero-art-label">Novo na loja</span>
+                <span class="hero-art-title">Beyond<br>the dusk</span>
+            </div>
+        </section>
+
+        <section id="jogos">
+            <div class="section-heading">
+                <div>
+                    <h2 id="games-title">Em promoção agora</h2>
+                    <p>Seis jogos que valem a pena, com o preço original riscado ao lado.</p>
+                </div>
+                <a href="#jogos" id="clearFilters">Limpar filtros</a>
+            </div>
+
+            <div class="filters" role="group" aria-label="Filtrar por gênero">
+                <button class="filter active" type="button" data-filter="Todos">Todos</button>
+                <button class="filter" type="button" data-filter="Aventura">Aventura</button>
+                <button class="filter" type="button" data-filter="Ação">Ação</button>
+                <button class="filter" type="button" data-filter="RPG">RPG</button>
+                <button class="filter" type="button" data-filter="Corrida">Corrida</button>
+                <button class="filter" type="button" data-filter="Indie">Indie</button>
+            </div>
+
+            <div class="game-grid" id="gameGrid">
+                <article class="game-card" data-name="Echoes of orbit" data-genre="Aventura">
+                    <div class="cover cover-orbit">
+                        <span class="badge">-35%</span>
+                        <div class="cover-name"><small>Explore o espaço sozinho</small><strong>Echoes<br>of orbit</strong></div>
+                    </div>
+                    <div class="game-info">
+                        <span class="genre">Aventura, exploração</span>
+                        <div class="game-bottom">
+                            <div class="price"><strong>R$ 89,90</strong><span class="old-price">R$ 139,90</span></div>
+                            <button class="add-button" type="button" aria-label="Adicionar Echoes of Orbit ao carrinho" data-game="Echoes of Orbit">+</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="game-card" data-name="Ashes of ember" data-genre="Ação">
+                    <div class="cover cover-ember">
+                        <span class="badge">-25%</span>
+                        <div class="cover-name"><small>Reconstrua o reino queimado</small><strong>Ashes<br>of ember</strong></div>
+                    </div>
+                    <div class="game-info">
+                        <span class="genre">Ação, aventura</span>
+                        <div class="game-bottom">
+                            <div class="price"><strong>R$ 119,90</strong><span class="old-price">R$ 159,90</span></div>
+                            <button class="add-button" type="button" aria-label="Adicionar Ashes of Ember ao carrinho" data-game="Ashes of Ember">+</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="game-card" data-name="Wildwood" data-genre="RPG">
+                    <div class="cover cover-forest">
+                        <span class="badge">-40%</span>
+                        <div class="cover-name"><small>Uma floresta inteira para explorar</small><strong>Wildwood</strong></div>
+                    </div>
+                    <div class="game-info">
+                        <span class="genre">RPG, mundo aberto</span>
+                        <div class="game-bottom">
+                            <div class="price"><strong>R$ 71,90</strong><span class="old-price">R$ 119,90</span></div>
+                            <button class="add-button" type="button" aria-label="Adicionar Wildwood ao carrinho" data-game="Wildwood">+</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="game-card" data-name="Neon pulse" data-genre="Indie">
+                    <div class="cover cover-neon">
+                        <span class="badge">-20%</span>
+                        <div class="cover-name"><small>Jogo de ritmo ambientado na cidade</small><strong>Neon pulse</strong></div>
+                    </div>
+                    <div class="game-info">
+                        <span class="genre">Indie, ritmo</span>
+                        <div class="game-bottom">
+                            <div class="price"><strong>R$ 39,90</strong><span class="old-price">R$ 49,90</span></div>
+                            <button class="add-button" type="button" aria-label="Adicionar Neon Pulse ao carrinho" data-game="Neon Pulse">+</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="game-card" data-name="Stormbreak" data-genre="Ação">
+                    <div class="cover cover-storm">
+                        <span class="badge">-30%</span>
+                        <div class="cover-name"><small>Sobreviva até o fim da tempestade</small><strong>Stormbreak</strong></div>
+                    </div>
+                    <div class="game-info">
+                        <span class="genre">Ação, sobrevivência</span>
+                        <div class="game-bottom">
+                            <div class="price"><strong>R$ 69,90</strong><span class="old-price">R$ 99,90</span></div>
+                            <button class="add-button" type="button" aria-label="Adicionar Stormbreak ao carrinho" data-game="Stormbreak">+</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="game-card" data-name="Drift horizon" data-genre="Corrida">
+                    <div class="cover cover-drift">
+                        <span class="badge">-15%</span>
+                        <div class="cover-name"><small>Corrida arcade em estradas abertas</small><strong>Drift<br>horizon</strong></div>
+                    </div>
+                    <div class="game-info">
+                        <span class="genre">Corrida, arcade</span>
+                        <div class="game-bottom">
+                            <div class="price"><strong>R$ 84,90</strong><span class="old-price">R$ 99,90</span></div>
+                            <button class="add-button" type="button" aria-label="Adicionar Drift Horizon ao carrinho" data-game="Drift Horizon">+</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <p class="empty-state" id="emptyState">Nenhum jogo com esse nome. Confira a busca ou escolha outro gênero.</p>
+        </section>
+
+        <section class="perks" id="vantagens">
+            <div class="perk">
+                <div><strong>Chave na hora</strong><span>Enviada por e-mail logo após a aprovação do pagamento.</span></div>
+            </div>
+            <div class="perk">
+                <div><strong>Pix, cartão ou boleto</strong><span>Você escolhe como pagar no fim da compra.</span></div>
+            </div>
+            <div class="perk">
+                <div><strong>Atendimento por chat</strong><span>Dúvida com a chave ou o download? Fale com a gente.</span></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="shell footer-inner">
+            <span>© 2026 Checkpoint</span>
+            <span>Salvador, BA</span>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js" defer></script>
+</body>
+</html>

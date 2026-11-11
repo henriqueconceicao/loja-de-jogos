@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" fill="none">
+  <defs>
+    <linearGradient id="clouds" x1="300" y1="0" x2="300" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#52677D"/><stop offset=".5" stop-color="#27384E"/><stop offset="1" stop-color="#151B29"/>
+    </linearGradient>
+    <radialGradient id="light" cx="0" cy="0" r="1" gradientTransform="matrix(0 176 -213 0 416 226)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6D99A" stop-opacity=".9"/><stop offset="1" stop-color="#F6D99A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sea" x1="300" y1="224" x2="300" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#344F64"/><stop offset="1" stop-color="#101A28"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#clouds)" d="M0 0h600v380H0z"/>
+  <path d="m0 70 67-32 58 21 48-40 77 43 66-37 70 41 64-35 73 27 77-41v105l-77 27-67-18-67 42-74-28-72 34-70-34-68 20-76-28-69 19z" fill="#303F54"/>
+  <path d="m421 14-70 118h44l-35 77 98-125h-47l42-70z" fill="#E5F4F4" fill-opacity=".88"/>
+  <path fill="url(#light)" d="M0 0h600v380H0z"/>
+  <path d="M0 234c77-26 111-14 173 4 71 20 119-12 193-10 81 2 133 36 234 1v151H0z" fill="url(#sea)"/>
+  <path d="M0 282c83-25 132 22 222 1 77-18 110-31 181-4 72 27 121 32 197 2m-600 63c76-23 129 16 215-3 73-16 130-26 203-1 72 25 120 18 182-1" stroke="#A7D3DE" stroke-opacity=".52" stroke-width="4"/>
+  <path d="m0 331 59-15 58 20 76-13 52 15 86-19 87 21 72-17 62 14 48-16v59H0z" fill="#101925"/>
+  <g transform="translate(171 161)">
+    <path d="m67 65 90 2 43 42-25 18H56l-30-18z" fill="#211F29"/>
+    <path d="m75 41 55-2 22 28-78-2z" fill="#D5D4C6"/>
+    <path d="m111 8 4 30-59 39 6 8 72-31 31 52 6-4-18-65-25-28z" fill="#E7E4D7"/>
+    <path d="m110 8 6 30 16 9 6-20z" fill="#3D4D5A"/>
+    <path d="M120 43c22 8 38 14 54 28m-46-11c20 8 37 18 49 32" stroke="#F4DDA6" stroke-width="4"/>
+    <path d="m38 113-20 17m54-15-10 22m97-19 21 16" stroke="#B7DCE2" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <path d="m91 213 45-8 22 8-44 10zm324 22 57-8 27 9-60 8z" fill="#D6E4E2" opacity=".5"/>
+  <g fill="#E5F4F4" opacity=".65"><circle cx="85" cy="172" r="2"/><circle cx="489" cy="195" r="2"/><circle cx="512" cy="81" r="2.5"/></g>
+</svg>
